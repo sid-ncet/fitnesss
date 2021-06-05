@@ -1,0 +1,147 @@
+{%load static %}
+<html>
+    <head>
+        <title>
+            fitness
+        </title>
+    </head>
+
+    <style>
+        body{
+
+            margin: o;
+            padding: 0;
+
+
+
+        }
+        .left{
+            display: inline-block;
+            position: absolute;
+            left: 80px;
+            top: 20px;
+
+        }
+        .form-group input {
+    text-align: center;
+    width: 421px;
+    padding: 25px;
+    border: 4px solid black;
+    font-size: 20px;
+    border-radius: 30px;
+}
+        .mid{
+            display:block;
+            width: 33%;
+            margin: 20px auto;
+
+
+        }
+        .right{
+            display: block;
+            position: absolute;
+            right: 34px;
+            top: 20px;
+            width: 20%;
+
+
+        }
+        .navbar{
+            display: inline-block;
+
+        }
+        .navbar li{
+            display: inline-block;
+            font-size: 20px;
+        }
+        .navbar li a{
+            color: black;
+            text-decoration: none;
+            padding: 14px;
+        }
+        .navbar li a:hover,navbar li a.active{
+            text-decoration: underline;
+            color: purple;
+        }
+        .left img{
+            width: 50px;
+        }
+
+.container {
+
+    margin: 50px 462px;
+    padding: 0px 38px;
+    width: 33%;
+    border-radius: 31px;
+}
+.container button {
+    color: black;
+    background-color: red;
+    border-radius: 8px;
+    width: 45%;
+    padding: 8px 23px;
+    margin: 8px 74px;
+    font-size: 24px;
+    display: block;
+    margin:7px 110px
+}
+    </style>
+
+    <body>
+    <div class="image"style="background-color:grey">
+
+        <div class="header">
+            <div class="left">
+                <img src="{% static 'images/logo.jpg' %}">
+
+            </div>
+            <div class="mid">
+                <ul class="navbar">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">fitness mantra</a></li>
+                </ul>
+
+            </div>
+            <div class="right">
+            <ul class="navbar">
+                <li><a href="">signup</a></li>
+                <li><a href="">login</a></li>
+            </ul>
+            </div>
+
+        </div>
+    </div>
+
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="background-color:pink">
+        <strong>{{message}}!</strong>
+   </div>
+    {% endfor %}
+
+
+        <div class="container">
+          <h2 style="color:black">  JOIN THE BEST GYM IN KANPUR</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input required type='text'name="name" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group">
+                    <input required type='text' name="mobile" placeholder="Enter Your Mobile Number">
+                </div>
+                <div class="form-group">
+                    <input required type='text' name="age" placeholder="Enter Your Age">
+                </div>
+                <div class="form-group">
+                    <input required type='text' name="adress" placeholder="Enter Your Adress">
+                </div>
+                <button class="btn">SUBMIT</button>
+            </form>
+        </div>
+
+
+
+    </body>
+</html>
